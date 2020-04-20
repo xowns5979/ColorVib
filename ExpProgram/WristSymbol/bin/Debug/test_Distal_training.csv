@@ -1,0 +1,5 @@
+id,cond,trial#,realPattern,userAnswer,correct,c1,c2,playstamp,playendstamp,enterstamp
+test,Distal,1,13,12,0,1,0,877,1884,4717
+id,cond,trial#,realPattern,userAnswer,correct,c1,c2,playstamp,playendstamp,enterstamp
+test,Distal,1,43,24,0,0,0,1733,2738,5320
+test,Distal,2,34,12,0,0,0,6323,7325,10383
