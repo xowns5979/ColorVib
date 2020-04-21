@@ -113,5 +113,51 @@
   <ItemGroup>
     <Resource Include="img\overview.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\hand.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\pattern1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\pattern2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\pattern3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\pattern10.PNG" />
+    <Resource Include="img\pattern11.PNG" />
+    <Resource Include="img\pattern12.PNG" />
+    <Resource Include="img\pattern4.PNG" />
+    <Resource Include="img\pattern5.PNG" />
+    <Resource Include="img\pattern6.PNG" />
+    <Resource Include="img\pattern7.PNG" />
+    <Resource Include="img\pattern8.PNG" />
+    <Resource Include="img\pattern9.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pattern13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\pattern13.PNG" />
+    <Resource Include="img\pattern14.PNG" />
+    <Resource Include="img\pattern15.PNG" />
+    <Resource Include="img\pattern16.PNG" />
+    <Resource Include="img\pattern17.PNG" />
+    <Resource Include="img\pattern18.PNG" />
+    <Resource Include="img\pattern19.PNG" />
+    <Resource Include="img\pattern20.PNG" />
+    <Resource Include="img\pattern21.PNG" />
+    <Resource Include="img\pattern22.PNG" />
+    <Resource Include="img\pattern23.PNG" />
+    <Resource Include="img\pattern24.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\pattern25.PNG" />
+    <Resource Include="img\pattern26.PNG" />
+    <Resource Include="img\pattern27.PNG" />
+    <Resource Include="img\pattern28.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,10 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WristSymbol"
         mc:Ignorable="d"
-        Title="MainWindow" Height="577.393" Width="692.754">
+        Title="MainWindow" Height="975.718" Width="1454.254">
     <Grid Margin="0,0,0,0">
-        <Image x:Name="image" Source="./img/overview.png" Margin="152,83,153,205"></Image>
-        <Label Content="Wrist Symbol" HorizontalAlignment="Left" Margin="547,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.048,0.396" FontSize="20" FontFamily="Arial" Width="128"/>
+        <Image x:Name="image2" Source="./img/hand.png" Margin="10,64,1184,579"></Image>
+        <Label Content="4 Color Vibration" HorizontalAlignment="Left" Margin="1198,7,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.048,0.396" FontSize="30" FontFamily="Arial" Width="238" Height="44"/>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="392" Margin="238,236,816,672">
+            <Label Content="진동 길이(ms)" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
+            <Slider x:Name="vibDuration" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="1000" TickPlacement="BottomRight" TickFrequency="100" IsSnapToTickEnabled="True"  Value="500"/>
+            <TextBox Text="{Binding Value, ElementName=vibDuration, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,10,0" TextAlignment="Center" Width="45" Height="25" />
+            <Button x:Name="vibDurationFix" Width="60" VerticalAlignment="Center" Content="설정" Height="25" Margin="0,0" Click="vibDurationFix_Click"/>
+
+        </StackPanel>
         <StackPanel Name="panel1" HorizontalAlignment="Left" Height="27" Margin="14,14,0,0" VerticalAlignment="Top" Width="333" Orientation="Horizontal" RenderTransformOrigin="0.242,0.687" >
             <StackPanel.RenderTransform>
                 <TransformGroup>
@@ -22,27 +29,241 @@
             <ComboBox Name="ComboboxSerials" Width="120"/>
             <Button x:Name="ButtonConnect" HorizontalAlignment="Left" VerticalAlignment="Top" Width="93" Height="27" Click="ButtonConnect_Click" Content="Connect"/>
         </StackPanel>
-        <StackPanel x:Name="intervalPanel_Copy2" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="398" Orientation="Horizontal" Margin="152,376,0,0"  >
-            <Label Content="Exp" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="-0.048,0.396" FontFamily="Arial" Height="69" FontSize="18"/>
-            <ComboBox x:Name="ComboboxCond" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  FontFamily="Arial" Width="153" Height="48" FontSize="14" Margin="0,10"/>
-            <ComboBox x:Name="ComboboxMode" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  FontFamily="Arial" Width="120" Height="48" FontSize="14" Margin="0,10"/>
+        <Border Background="GhostWhite" BorderBrush="Gray" BorderThickness="1" Margin="34,366,1090,351">
+            <StackPanel Orientation="Vertical" Margin="0,10,-1,10">
+                <Label Content="1번 모터" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Arial" Height="46" Width="294" FontSize="24" Margin="0,0,0,0"/>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="274" Margin="5,0,35,10">
+                    <Label Content="파워(%)" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
+                    <Slider x:Name="motor1power" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="100"/>
+                    <TextBox Text="{Binding Value, ElementName=motor1power, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="45" Height="25" />
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="299" Margin="5,0,10,10">
+                    <Label Content="주파수(Hz)" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
+                    <Slider x:Name="motor1frequency" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="400" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="150"/>
+                    <TextBox Text="{Binding Value, ElementName=motor1frequency, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="45" Height="25" />
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
+                    <Label Content="Modulation 효과" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
+                    <CheckBox Name="motor1Modulation" VerticalAlignment="Center" Margin="20,0,0,0" IsChecked="False" ></CheckBox>
+                </StackPanel>
+                <Button x:Name="motor1Fix" Width="150" VerticalAlignment="Center" Content="설정" Height="45" Margin="0,0,0,0" Click="Motor1Fix_Click"/>
+            </StackPanel>
+        </Border>
+        <Border Background="GhostWhite" BorderBrush="Gray" BorderThickness="1" Margin="34,599,1090,118">
+            <StackPanel Orientation="Vertical" Margin="0,10,0,10">
+                <Label Content="3번 모터" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Arial" Height="46" Width="294" FontSize="24" Margin="0,0,0,0"/>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
+                    <Label Content="파워(%)" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
+                    <Slider x:Name="motor3power" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="100"/>
+                    <TextBox Text="{Binding Value, ElementName=motor3power, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="45" Height="25" />
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
+                    <Label Content="주파수(Hz)" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
+                    <Slider x:Name="motor3frequency" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="400" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="150"/>
+                    <TextBox Text="{Binding Value, ElementName=motor3frequency, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="45" Height="25" />
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
+                    <Label Content="Modulation 효과" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
+                    <CheckBox x:Name="motor3Modulation" VerticalAlignment="Center" Margin="20,0,0,0" IsChecked="False"/>
+                </StackPanel>
+                <Button x:Name="motor3Fix" Width="150" VerticalAlignment="Center" Content="설정" Height="45" Margin="0,0,0,0" Click="Motor3Fix_Click"/>
 
-            <Label Content="" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="-0.048,0.396" FontFamily="Arial" Height="69" FontSize="18"/>
-            <Button x:Name ="ButtonStart"  Content="Start" HorizontalAlignment="Left" Width="70" Click="ButtonStart_Click" FontSize="14" FontFamily="Arial" RenderTransformOrigin="2.671,-0.242">
-                <Button.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleY="-0.796"/>
-                        <RotateTransform/>
-                        <TranslateTransform Y="-1.625"/>
-                    </TransformGroup>
-                </Button.RenderTransform>
-            </Button>
+            </StackPanel>
+        </Border>
+        <Border Background="GhostWhite" BorderBrush="Gray" BorderThickness="1" Margin="361,365,763,352">
+            <StackPanel Orientation="Vertical" Margin="0,10,0,10">
+                <Label Content="2번 모터" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Arial" Height="46" Width="294" FontSize="24" Margin="0,0,0,0"/>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
+                    <Label Content="파워(%)" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
+                    <Slider x:Name="motor2power" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="100"/>
+                    <TextBox Text="{Binding Value, ElementName=motor2power, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="45" Height="25" />
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
+                    <Label Content="주파수(Hz)" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
+                    <Slider x:Name="motor2frequency" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="400" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="150"/>
+                    <TextBox Text="{Binding Value, ElementName=motor2frequency, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="45" Height="25" />
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
+                    <Label Content="Modulation 효과" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
+                    <CheckBox x:Name="motor2Modulation" VerticalAlignment="Center" Margin="20,0,0,0" IsChecked="False"/>
+                </StackPanel>
+                <Button x:Name="motor2Fix" Width="150" VerticalAlignment="Center" Content="설정" Height="45" Margin="0,0,0,0" Click="Motor2Fix_Click"/>
+            </StackPanel>
+        </Border>
+        <Border Background="GhostWhite" BorderBrush="Gray" BorderThickness="1" Margin="361,599,763,118">
+            <StackPanel Orientation="Vertical" Margin="0,10,0,10">
+                <Label Content="4번 모터" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Arial" Height="46" Width="294" FontSize="24" Margin="0,0,0,0"/>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
+                    <Label Content="파워(%)" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
+                    <Slider x:Name="motor4power" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="100"/>
+                    <TextBox Text="{Binding Value, ElementName=motor4power, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="45" Height="25" />
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
+                    <Label Content="주파수(Hz)" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
+                    <Slider x:Name="motor4frequency" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="400" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="150"/>
+                    <TextBox Text="{Binding Value, ElementName=motor4frequency, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="45" Height="25" />
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
+                    <Label Content="Modulation 효과" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
+                    <CheckBox x:Name="motor4Modulation" VerticalAlignment="Center" Margin="20,0,0,0" IsChecked="False"/>
+                </StackPanel>
+                <Button x:Name="motor4Fix" Width="150" VerticalAlignment="Center" Content="설정" Height="45" Margin="0,0,0,0" Click="Motor4Fix_Click"/>
+            </StackPanel>
+        </Border>
+        <Button Name="pattern1" Background="GhostWhite" Margin="714,56,610,776" RenderTransformOrigin="0.5,0.5" Click="Pattern1_Click">
+            <StackPanel>
+                <Image Source="img/pattern1.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button Name="pattern2" Background="GhostWhite" Margin="840,56,484,776" RenderTransformOrigin="0.5,0.5" Click="Pattern2_Click">
+            <StackPanel>
+                <Image Source="img/pattern2.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button Name="pattern3" Background="GhostWhite" Margin="968,56,356,776" RenderTransformOrigin="0.5,0.5" Click="Pattern3_Click">
+            <StackPanel>
+                <Image Source="img/pattern3.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button Name="pattern4" Background="GhostWhite" Margin="1094,56,230,776" RenderTransformOrigin="0.5,0.5" Click="Pattern4_Click">
+            <StackPanel>
+                <Image Source="img/pattern4.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button Name="pattern5" Background="GhostWhite" Margin="714,189,610,640" RenderTransformOrigin="0.5,0.5" Click="Pattern5_Click">
+            <StackPanel>
+                <Image Source="img/pattern5.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button Name="pattern6" Background="GhostWhite" Margin="840,189,484,640" RenderTransformOrigin="0.5,0.5" Click="Pattern6_Click">
+            <StackPanel>
+                <Image Source="img/pattern6.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button Name="pattern7" Background="GhostWhite" Margin="968,189,356,640" RenderTransformOrigin="0.5,0.5" Click="Pattern7_Click">
+            <StackPanel>
+                <Image Source="img/pattern7.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button Name="pattern8" Background="GhostWhite" Margin="1094,189,230,640" RenderTransformOrigin="0.5,0.5" Click="Pattern8_Click">
+            <StackPanel>
+                <Image Source="img/pattern8.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button Name="pattern9" Background="GhostWhite" Margin="714,310,610,524" RenderTransformOrigin="0.5,0.5" Click="Pattern9_Click">
+            <StackPanel>
+                <Image Source="img/pattern9.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button Name="pattern10" Background="GhostWhite" Margin="840,310,484,524" RenderTransformOrigin="0.5,0.5" Click="Pattern10_Click">
+            <StackPanel>
+                <Image Source="img/pattern10.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button Name="pattern11" Background="GhostWhite" Margin="968,310,356,524" RenderTransformOrigin="0.5,0.5" Click="Pattern11_Click">
+            <StackPanel>
+                <Image Source="img/pattern11.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button Name="pattern12" Background="GhostWhite" Margin="1094,310,230,524" RenderTransformOrigin="0.5,0.5" Click="Pattern12_Click">
+            <StackPanel>
+                <Image Source="img/pattern12.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+
+        <Button Name="pattern13" Background="GhostWhite" Margin="1095,567,229,262" RenderTransformOrigin="0.5,0.5" Click="Pattern13_Click">
+            <StackPanel>
+                <Image Source="img/pattern13.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="pattern14" Background="GhostWhite" Margin="1095,688,229,145" RenderTransformOrigin="0.5,0.5" Click="Pattern14_Click">
+            <StackPanel>
+                <Image Source="img/pattern14.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="pattern15" Background="GhostWhite" Margin="714,567,610,262" RenderTransformOrigin="0.5,0.5" Click="Pattern15_Click">
+            <StackPanel>
+                <Image Source="img/pattern15.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="pattern16" Background="GhostWhite" Margin="841,567,483,262" RenderTransformOrigin="0.5,0.5" Click="Pattern16_Click">
+            <StackPanel>
+                <Image Source="img/pattern16.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="pattern17" Background="GhostWhite" Margin="968,567,356,262" RenderTransformOrigin="0.5,0.5" Click="Pattern17_Click">
+            <StackPanel>
+                <Image Source="img/pattern17.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="pattern18" Background="GhostWhite" Margin="714,688,610,145" RenderTransformOrigin="0.5,0.5" Click="Pattern18_Click">
+            <StackPanel>
+                <Image Source="img/pattern18.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="pattern19" Background="GhostWhite" Margin="841,688,483,145" RenderTransformOrigin="0.5,0.5" Click="Pattern19_Click">
+            <StackPanel>
+                <Image Source="img/pattern19.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="pattern20" Background="GhostWhite" Margin="968,688,356,145" RenderTransformOrigin="0.5,0.5" Click="Pattern20_Click">
+            <StackPanel>
+                <Image Source="img/pattern20.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="pattern21" Background="GhostWhite" Margin="714,446,610,383" RenderTransformOrigin="0.5,0.5" Click="Pattern21_Click">
+            <StackPanel>
+                <Image Source="img/pattern21.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="pattern22" Background="GhostWhite" Margin="840,446,484,383" RenderTransformOrigin="0.5,0.5" Click="Pattern22_Click">
+            <StackPanel>
+                <Image Source="img/pattern22.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="pattern23" Background="GhostWhite" Margin="967,446,357,383" RenderTransformOrigin="0.5,0.5" Click="Pattern23_Click">
+            <StackPanel>
+                <Image Source="img/pattern23.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="pattern24" Background="GhostWhite" Margin="1094,446,230,383" RenderTransformOrigin="0.5,0.5" Click="Pattern24_Click">
+            <StackPanel>
+                <Image Source="img/pattern24.png"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="445" Margin="238,273,763,635">
+            <Label Content="모듈레이션 On 시간(ms)" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
+            <Slider x:Name="modulationOnTime" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="40"/>
+            <TextBox Text="{Binding Value, ElementName=modulationOnTime, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,10,0" TextAlignment="Center" Width="45" Height="25" />
+            <Button x:Name="modulationOnTimeFix" Width="60" VerticalAlignment="Center" Content="설정" Height="25" Margin="0,0" Click="modulationOnTimeFix_Click"/>
 
         </StackPanel>
-        <StackPanel x:Name="ExpPanel" HorizontalAlignment="Left" Height="62" VerticalAlignment="Top" Width="127" Orientation="Horizontal" Margin="285,449,0,0"  >
-            <Label Content="ID" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,4,0" RenderTransformOrigin="-0.048,0.396" FontFamily="Arial"/>
-            <TextBox x:Name="logID" HorizontalAlignment="Left"  Height="23" Margin="0,0,10,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="77" RenderTransformOrigin="-3.46,10.087"/>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="445" Margin="238,310,763,598">
+            <Label Content="모듈레이션 Off 시간(ms)" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
+            <Slider x:Name="modulationOffTime" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="20"/>
+            <TextBox Text="{Binding Value, ElementName=modulationOffTime, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,10,0" TextAlignment="Center" Width="45" Height="25" />
+            <Button x:Name="modulationOffTimeFix" Width="60" VerticalAlignment="Center" Content="설정" Height="25" Margin="0,0" Click="modulationOffTimeFix_Click"/>
+
         </StackPanel>
+        <Button x:Name="pattern25" Background="GhostWhite" Margin="714,815,610,18" RenderTransformOrigin="0.5,0.5" Click="Pattern25_Click">
+            <StackPanel>
+                <Image Source="img/pattern25.PNG"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="pattern26" Background="GhostWhite" Margin="841,815,483,18" RenderTransformOrigin="0.5,0.5" Click="Pattern26_Click">
+            <StackPanel>
+                <Image Source="img/pattern26.PNG"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="pattern27" Background="GhostWhite" Margin="967,815,357,18" RenderTransformOrigin="0.5,0.5" Click="Pattern27_Click">
+            <StackPanel>
+                <Image Source="img/pattern27.PNG"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="pattern28" Background="GhostWhite" Margin="1095,815,229,18" RenderTransformOrigin="0.5,0.5" Click="Pattern28_Click">
+            <StackPanel>
+                <Image Source="img/pattern28.PNG"  Width="100" Height="100" />
+            </StackPanel>
+        </Button>
     </Grid>
 </Window>

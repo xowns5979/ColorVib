@@ -11,6 +11,8 @@ const int lra4_R = 13;
 bool lraOn[4] = {false, false, false, false};
 int lraFrequency[4] = {166, 166, 166, 166};   // lra 진동수 (Hz)
 int lraPeriod[4] = {(int)(1000000.0/166), (int)(1000000.0/166), (int)(1000000.0/166), (int)(1000000.0/166) };   // lra 주기 (us)
+int lraAmplitude[4] = {100, 100, 100, 100};   // 진동 파워 (%)
+
 bool lraBurst[4] = {false, false, false, false};  // lra 잠깐 틀기
 unsigned long lraBurstStartTime[4] = {0, 0, 0, 0};   // lra 잠깐 틀기 시작한 시간
 
@@ -149,7 +151,7 @@ void loopSerial()
     {
       int motorNum = (int)c1 - 49;
       int freq = ((int)c3-48)*100+((int)c4-48)*10+((int)c5-48);
-      int period = (int)(1000000.0 / freq); // Unit : us, microseconds
+      int period = (int)((float)1000000 / (float)freq); // Unit : us, microseconds
       if(0 <= motorNum && motorNum < 4)
       {
         lraFrequency[motorNum] = freq;
@@ -159,6 +161,22 @@ void loopSerial()
         Serial.print(motorNum+1);
         Serial.print(" Frequency: ");
         Serial.println(freq);
+        Serial.flush();
+        */
+      }
+    }
+    else if (c2 == 'a')
+    {
+      int motorNum = (int)c1 - 49;
+      int amplitude = ((int)c3-48)*100+((int)c4-48)*10+((int)c5-48);
+      if(0 <= motorNum && motorNum < 4)
+      {
+        lraAmplitude[motorNum] = amplitude;
+        /*
+        Serial.print("LRA motor ");
+        Serial.print(motorNum+1);
+        Serial.print(" Amplitude: ");
+        Serial.println(amplitude);
         Serial.flush();
         */
       }
@@ -288,62 +306,73 @@ void lraOnOff(int motorNum)
   {
     digitalWrite(lra1_F, HIGH);
     digitalWrite(lra1_R, LOW);
-
-    delayMicroseconds((int)(lraPeriod[motorNum] / 2));
-
-    digitalWrite(lra1_F, LOW);
-    digitalWrite(lra1_R, HIGH);
-
-    delayMicroseconds((int)(lraPeriod[motorNum] / 2));
+    delayMicroseconds((int)(((float)lraPeriod[motorNum] / (float)2)*((float)lraAmplitude[motorNum]/(float)100)));
 
     digitalWrite(lra1_F, LOW);
     digitalWrite(lra1_R, LOW);
+    delayMicroseconds((int)(((float)lraPeriod[motorNum] / (float)2)*(1 - ((float)lraAmplitude[motorNum]/(float)100))));
+
+    digitalWrite(lra1_F, LOW);
+    digitalWrite(lra1_R, HIGH);
+    delayMicroseconds((int)(((float)lraPeriod[motorNum] / (float)2)*((float)lraAmplitude[motorNum]/(float)100)));
+
+    digitalWrite(lra1_F, LOW);
+    digitalWrite(lra1_R, LOW);
+    delayMicroseconds((int)(((float)lraPeriod[motorNum] / (float)2)*(1 - ((float)lraAmplitude[motorNum]/(float)100))));
   }
   else if (motorNum == 1)
   {
     digitalWrite(lra2_F, HIGH);
     digitalWrite(lra2_R, LOW);
-
-    delayMicroseconds((int)(lraPeriod[motorNum] / 2));
-
-    digitalWrite(lra2_F, LOW);
-    digitalWrite(lra2_R, HIGH);
-
-    delayMicroseconds((int)(lraPeriod[motorNum] / 2));
+    delayMicroseconds((int)(((float)lraPeriod[motorNum] / (float)2)*((float)lraAmplitude[motorNum]/(float)100)));
 
     digitalWrite(lra2_F, LOW);
     digitalWrite(lra2_R, LOW);
+    delayMicroseconds((int)(((float)lraPeriod[motorNum] / (float)2)*(1 - ((float)lraAmplitude[motorNum]/(float)100))));
+
+    digitalWrite(lra2_F, LOW);
+    digitalWrite(lra2_R, HIGH);
+    delayMicroseconds((int)(((float)lraPeriod[motorNum] / (float)2)*((float)lraAmplitude[motorNum]/(float)100)));
+
+    digitalWrite(lra2_F, LOW);
+    digitalWrite(lra2_R, LOW);
+    delayMicroseconds((int)(((float)lraPeriod[motorNum] / (float)2)*(1 - ((float)lraAmplitude[motorNum]/(float)100))));
   }
   else if (motorNum == 2)
   {
     digitalWrite(lra3_F, HIGH);
     digitalWrite(lra3_R, LOW);
-
-    delayMicroseconds((int)(lraPeriod[motorNum] / 2));
-
-    digitalWrite(lra3_F, LOW);
-    digitalWrite(lra3_R, HIGH);
-
-    delayMicroseconds((int)(lraPeriod[motorNum] / 2));
+    delayMicroseconds((int)(((float)lraPeriod[motorNum] / (float)2)*((float)lraAmplitude[motorNum]/(float)100)));
 
     digitalWrite(lra3_F, LOW);
     digitalWrite(lra3_R, LOW);
+    delayMicroseconds((int)(((float)lraPeriod[motorNum] / (float)2)*(1 - ((float)lraAmplitude[motorNum]/(float)100))));
+
+    digitalWrite(lra3_F, LOW);
+    digitalWrite(lra3_R, HIGH);
+    delayMicroseconds((int)(((float)lraPeriod[motorNum] / (float)2)*((float)lraAmplitude[motorNum]/(float)100)));
+
+    digitalWrite(lra3_F, LOW);
+    digitalWrite(lra3_R, LOW);
+    delayMicroseconds((int)(((float)lraPeriod[motorNum] / (float)2)*(1 - ((float)lraAmplitude[motorNum]/(float)100))));
   }
   else if (motorNum == 3)
   {
     digitalWrite(lra4_F, HIGH);
     digitalWrite(lra4_R, LOW);
-
-    
-    delayMicroseconds((int)(lraPeriod[motorNum] / 2));
-
-    digitalWrite(lra4_F, LOW);
-    digitalWrite(lra4_R, HIGH);
-
-    delayMicroseconds((int)(lraPeriod[motorNum] / 2));
+    delayMicroseconds((int)(((float)lraPeriod[motorNum] / (float)2)*((float)lraAmplitude[motorNum]/(float)100)));
 
     digitalWrite(lra4_F, LOW);
     digitalWrite(lra4_R, LOW);
+    delayMicroseconds((int)(((float)lraPeriod[motorNum] / (float)2)*(1 - ((float)lraAmplitude[motorNum]/(float)100))));
+
+    digitalWrite(lra4_F, LOW);
+    digitalWrite(lra4_R, HIGH);
+    delayMicroseconds((int)(((float)lraPeriod[motorNum] / (float)2)*((float)lraAmplitude[motorNum]/(float)100)));
+
+    digitalWrite(lra4_F, LOW);
+    digitalWrite(lra4_R, LOW);
+    delayMicroseconds((int)(((float)lraPeriod[motorNum] / (float)2)*(1 - ((float)lraAmplitude[motorNum]/(float)100))));
   }
   
 }
