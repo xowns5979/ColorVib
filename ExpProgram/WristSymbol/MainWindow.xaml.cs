@@ -96,174 +96,651 @@ namespace WristSymbol
                 serialPort1.Close();
             }
         }
-        
+
 
         private void Pattern1_Click(object sender, RoutedEventArgs e)
         {
             string str = "1243";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: "+ currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
+            
         }
 
         private void Pattern2_Click(object sender, RoutedEventArgs e)
         {
             string str = "1342";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern3_Click(object sender, RoutedEventArgs e)
         {
             string str = "1234";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern4_Click(object sender, RoutedEventArgs e)
         {
             string str = "2143";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern5_Click(object sender, RoutedEventArgs e)
         {
             string str = "134";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern6_Click(object sender, RoutedEventArgs e)
         {
             string str = "243";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern7_Click(object sender, RoutedEventArgs e)
         {
             string str = "132";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern8_Click(object sender, RoutedEventArgs e)
         {
             string str = "124";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern9_Click(object sender, RoutedEventArgs e)
         {
             string str = "312";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern10_Click(object sender, RoutedEventArgs e)
         {
             string str = "213";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern11_Click(object sender, RoutedEventArgs e)
         {
             string str = "234";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern12_Click(object sender, RoutedEventArgs e)
         {
             string str = "324";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern21_Click(object sender, RoutedEventArgs e)
         {
             string str = "12";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern22_Click(object sender, RoutedEventArgs e)
         {
             string str = "14";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern23_Click(object sender, RoutedEventArgs e)
         {
             string str = "13";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern24_Click(object sender, RoutedEventArgs e)
         {
             string str = "24";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern15_Click(object sender, RoutedEventArgs e)
         {
             string str = "31";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern16_Click(object sender, RoutedEventArgs e)
         {
             string str = "32";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern17_Click(object sender, RoutedEventArgs e)
         {
             string str = "34";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern13_Click(object sender, RoutedEventArgs e)
         {
             string str = "23";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern18_Click(object sender, RoutedEventArgs e)
         {
             string str = "43";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern19_Click(object sender, RoutedEventArgs e)
         {
             string str = "41";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern20_Click(object sender, RoutedEventArgs e)
         {
             string str = "42";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern14_Click(object sender, RoutedEventArgs e)
         {
             string str = "21";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern25_Click(object sender, RoutedEventArgs e)
         {
             string str = "1";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern26_Click(object sender, RoutedEventArgs e)
         {
             string str = "2";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern27_Click(object sender, RoutedEventArgs e)
         {
             string str = "3";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Pattern28_Click(object sender, RoutedEventArgs e)
         {
             string str = "4";
-            patternGenerate(str);
+            if (patternAnswering)
+            {
+                if (currentAskingPattern == str)
+                {
+                    randomPlayAnswerLabel.Content = "O";
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    randomPlayAnswerLabel.Content = "X, 정답: " + currentAskingPattern;
+                    randomPlayAnswerLabel.Visibility = Visibility.Visible;
+                }
+                patternAnswering = false;
+            }
+            else
+            {
+                patternGenerate(str);
+            }
         }
 
         private void Motor1Fix_Click(object sender, RoutedEventArgs e)
@@ -557,7 +1034,27 @@ namespace WristSymbol
                 }
             }
         }
+        String[] patternSet = { "1243", "1342", "1234", "2143",
+                                "134", "243", "132", "124", "312", "213", "234", "324",
+                                "12", "13", "14", "21", "23", "24", "31", "32", "34", "41", "42", "43",
+                                "1", "2", "3", "4"};
+        String currentAskingPattern = "";
+        bool patternAnswering = false;
+        private void randomPlay_Click(object sender, RoutedEventArgs e)
+        {
+            if(!patternAnswering)
+            {
+                randomPlayAnswerLabel.Visibility = Visibility.Hidden;
 
-        
+                Random rnd = new Random();
+                patternSet = patternSet.OrderBy(x => rnd.Next()).ToArray();
+
+                currentAskingPattern = patternSet[0];
+                patternGenerate(patternSet[0]);
+                patternAnswering = true;
+
+            }
+            
+        }
     }
 }

@@ -39,12 +39,12 @@
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="299" Margin="5,0,10,10">
                     <Label Content="주파수(Hz)" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
-                    <Slider x:Name="motor1frequency" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="400" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="150"/>
+                    <Slider x:Name="motor1frequency" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="400" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="250"/>
                     <TextBox Text="{Binding Value, ElementName=motor1frequency, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="45" Height="25" />
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
                     <Label Content="Modulation 효과" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
-                    <CheckBox Name="motor1Modulation" VerticalAlignment="Center" Margin="20,0,0,0" IsChecked="False" ></CheckBox>
+                    <CheckBox Name="motor1Modulation" VerticalAlignment="Center" Margin="20,0,0,0" IsChecked="True" ></CheckBox>
                 </StackPanel>
                 <Button x:Name="motor1Fix" Width="150" VerticalAlignment="Center" Content="설정" Height="45" Margin="0,0,0,0" Click="Motor1Fix_Click"/>
             </StackPanel>
@@ -59,7 +59,7 @@
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
                     <Label Content="주파수(Hz)" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
-                    <Slider x:Name="motor3frequency" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="400" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="150"/>
+                    <Slider x:Name="motor3frequency" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="400" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="250"/>
                     <TextBox Text="{Binding Value, ElementName=motor3frequency, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="45" Height="25" />
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
@@ -85,7 +85,7 @@
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
                     <Label Content="Modulation 효과" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
-                    <CheckBox x:Name="motor2Modulation" VerticalAlignment="Center" Margin="20,0,0,0" IsChecked="False"/>
+                    <CheckBox x:Name="motor2Modulation" VerticalAlignment="Center" Margin="20,0,0,0" IsChecked="True"/>
                 </StackPanel>
                 <Button x:Name="motor2Fix" Width="150" VerticalAlignment="Center" Content="설정" Height="45" Margin="0,0,0,0" Click="Motor2Fix_Click"/>
             </StackPanel>
@@ -265,5 +265,7 @@
                 <Image Source="img/pattern28.PNG"  Width="100" Height="100" />
             </StackPanel>
         </Button>
+        <Button x:Name="randomPlay" VerticalAlignment="Center" Content="Random Play" FontSize="20" Margin="1235,0,37,0" Click="randomPlay_Click" Height="59" />
+        <Label Name="randomPlayAnswerLabel" Content="정답" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Arial" Height="46" Width="170" FontSize="24" Margin="1239,572,37,327" Visibility="Hidden"/>
     </Grid>
 </Window>
