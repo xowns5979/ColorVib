@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\hcil\Desktop\Github\ColorVib\ExpProgram\WristSymbol\obj\Debug\
+C:\Users\hcil\Desktop\Github\ColorVib\ExpProgram\WristSymbol\obj\Release\
 WristSymbol
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\hcil\Desktop\Github\ColorVib\ExpProgram\WristSymbol\App.xaml
 3358177692
 

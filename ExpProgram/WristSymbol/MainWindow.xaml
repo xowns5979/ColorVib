@@ -39,7 +39,7 @@
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="299" Margin="5,0,10,10">
                     <Label Content="주파수(Hz)" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
-                    <Slider x:Name="motor1frequency" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="400" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="250"/>
+                    <Slider x:Name="motor1frequency" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="400" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="300"/>
                     <TextBox Text="{Binding Value, ElementName=motor1frequency, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="45" Height="25" />
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
@@ -59,7 +59,7 @@
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
                     <Label Content="주파수(Hz)" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
-                    <Slider x:Name="motor3frequency" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="400" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="250"/>
+                    <Slider x:Name="motor3frequency" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="400" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="300"/>
                     <TextBox Text="{Binding Value, ElementName=motor3frequency, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="45" Height="25" />
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
@@ -75,12 +75,12 @@
                 <Label Content="2번 모터" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Arial" Height="46" Width="294" FontSize="24" Margin="0,0,0,0"/>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
                     <Label Content="파워(%)" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
-                    <Slider x:Name="motor2power" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="100"/>
+                    <Slider x:Name="motor2power" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="30"/>
                     <TextBox Text="{Binding Value, ElementName=motor2power, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="45" Height="25" />
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
                     <Label Content="주파수(Hz)" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
-                    <Slider x:Name="motor2frequency" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="400" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="150"/>
+                    <Slider x:Name="motor2frequency" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="400" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="170"/>
                     <TextBox Text="{Binding Value, ElementName=motor2frequency, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="45" Height="25" />
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
@@ -95,12 +95,12 @@
                 <Label Content="4번 모터" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Arial" Height="46" Width="294" FontSize="24" Margin="0,0,0,0"/>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
                     <Label Content="파워(%)" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
-                    <Slider x:Name="motor4power" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="100"/>
+                    <Slider x:Name="motor4power" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="30"/>
                     <TextBox Text="{Binding Value, ElementName=motor4power, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="45" Height="25" />
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">
                     <Label Content="주파수(Hz)" VerticalAlignment="Center" Margin="0,0,5,0" FontFamily="Arial"/>
-                    <Slider x:Name="motor4frequency" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="400" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="150"/>
+                    <Slider x:Name="motor4frequency" HorizontalAlignment="Left" Margin="0,0,15,0" VerticalAlignment="Top" Width="150"  Maximum="400" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"  Value="170"/>
                     <TextBox Text="{Binding Value, ElementName=motor4frequency, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="45" Height="25" />
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="304" Margin="0,0,0,10">

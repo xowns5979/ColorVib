@@ -139,12 +139,16 @@ void loopSerial()
         lraOn[motorNum] = true;
         lraBurst[motorNum] = true;
         lraRunStartTime[motorNum] = millis();
-        /*
+        
         Serial.print("LRA motor ");
         Serial.print(motorNum+1);
         Serial.println(" Burst On");
+        Serial.print("Up time: ");
+        Serial.println((int)(((float)lraPeriod[motorNum] / (float)2)*((float)lraAmplitude[motorNum]/(float)100)));
+        Serial.print("Down time: ");
+        Serial.print((int)(((float)lraPeriod[motorNum] / (float)2)*(1 - ((float)lraAmplitude[motorNum]/(float)100))));
         Serial.flush();
-        */
+        
       }
     }
     else if (c2 == 'f')
